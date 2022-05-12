@@ -1,4 +1,4 @@
-module github.com/yimtun/sshserver
+module github.com/yimtun/thoreau
 
 go 1.16
 
