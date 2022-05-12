@@ -5,16 +5,16 @@
 # build
 
 ```
-
+cd sshserver
 mkdir ./pluginBin
-go build -o pluginBin/    sshserver.go 
+go build -o pluginBin/    thoreau.go
 go build -o pluginBin/    controller/controller.go 
 ```
 
 
 ```
 ls pluginBin/
-controller	sshserver
+controller	thoreau
 ```
 
 
@@ -22,9 +22,10 @@ install plugin
 
 
 ```
+cd sshserver
 git clone https://github.com/yimtun/cf.git
 cd cf
 go build cf.go
-cp cf pluginBin dir
+cp cf ../pluginBin
 ```
 
