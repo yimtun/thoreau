@@ -23,7 +23,7 @@
 # sshserver
 
 
-从私有仓库https://github.com/yimtun/sshServer 整理来得 目前还不是sshServer的全部功能
+从私有仓库https://github.com/yimtun/sshServer 整理来  核心功能还未完成迁移 不是sshServer的全部功能
 
 
 
