@@ -11,12 +11,25 @@ import (
 
 func main() {
 	user := os.Args[1]
-	err := os.Setenv("cfuser", user)
+	token:=os.Args[2]
+
+    // revice user and user token from thoreau
+
+	err := os.Setenv("thoreauUser", user) //  config  username  userid
+	err = os.Setenv("thoreauToken", token) //  get token from  threau
+
+	//fmt.Println("controller get user data from thoreau：",os.Getenv("thoreauUser"))
+	//fmt.Println("controller get user data from thoreau：",os.Getenv("thoreauToken"))
+
+    // next plugin can  use token get resource priliveges  from api server
+
+
 	if err != nil {
 		fmt.Println("ERROR:SECRET_KEY SET----", err.Error())
 	}
 
-	fmt.Println(user, "欢迎使用 终端堡垒机 获取帮助请安 help")
+	fmt.Println(user, "Welcome to thoreau for help press:help ")
+
 	r1, err := readline.New(">> ")
 	if err != nil {
 		panic(err)

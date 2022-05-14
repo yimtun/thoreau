@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/yimtun/thoreau/auth"
 	"io"
 	"log"
 	"os"
@@ -25,14 +26,18 @@ func userAdd(user, passwd string) {
 }
 
 func init() {
-	userAdd("user1", "123.123")
-	userAdd("xxx", "123")
+	account=auth.GetAccount()
+	fmt.Println(account)
+	//
+	/*
+	userAdd("tom", "123")
+	userAdd("cat", "456")
 	userAdd("yyy", "456")
 	userAdd("zzz", "456")
-	//	fmt.Println(account["user1"])
-	///	fmt.Println(findUser("user1"))
-	//	fmt.Println(FindPasswd("user1"))
+	 */
+
 }
+
 
 func findUser(user string) bool {
 
@@ -59,16 +64,17 @@ func setWinsize(f *os.File, w, h int) {
 
 func SshserverStart() {
 	ssh.Handle(func(s ssh.Session) {
-		fmt.Println("获取到的用户：", s.User())
-		fmt.Println("获取的客户端地址:", s.RemoteAddr())
-
-		cmd := exec.Command("./controller", s.User())
+		fmt.Println("user name:：", s.User())
+		fmt.Println("user client ip : port", s.RemoteAddr())
+		// usrname and usertoken
+		cmd := exec.Command("./controller", s.User(),s.User()+"token")
+		// cmd := exec.Command("./controller", s.User(),user.Token)
 		ptyReq, winCh, isPty := s.Pty()
 		if isPty {
 			cmd.Env = append(cmd.Env, fmt.Sprintf("TERM=%s", ptyReq.Term))
 			f, err := pty.Start(cmd)
 			if err != nil {
-                                fmt.Println("报错")
+                                fmt.Println(err)
 				fmt.Println(err)
 				//panic(err)
 			}
@@ -93,11 +99,19 @@ func SshserverStart() {
 	})
 
 	log.Println("starting ssh server on port 2022...")
-	ssh.ListenAndServe(":2022", nil,
+	err:=ssh.ListenAndServe(":2022", nil,
 		ssh.PasswordAuth(func(ctx ssh.Context, pass string) bool {
 			//			fmt.Println(ctx.User())
 			//	fmt.Println(ctx.User())
+			//message code or ldap ...
+			fmt.Println("ssh userName:",ctx.User())
+
 			return findUser(ctx.User()) && findPasswd(ctx.User()) == pass
+
 		}),
+
 	)
+	if err!=nil{}
+	panic(err)
+
 }
