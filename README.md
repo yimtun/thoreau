@@ -97,3 +97,35 @@ cp cf ../pluginBin
 cd /root/go-code/thoreau
 rm -rf cf
 ```
+
+
+```
+touch  /root/go-code/thoreau/pluginBin/a.json
+```
+
+
+```
+cat /root/go-code/thoreau/pluginBin/a.json
+```
+
+```
+{
+  "resources": [
+    {
+      "user_name": "tom",
+      "pass_word":"tom@321"
+    },
+    {
+      "user_name": "cat",
+      "pass_word":"cat@123"
+    }
+  ]
+}
+```
+
+
+
+```
+cd /root/go-code/thoreau/pluginBin
+./thoreau
+```
