@@ -129,3 +129,18 @@ cat /root/go-code/thoreau/pluginBin/a.json
 cd /root/go-code/thoreau/pluginBin
 ./thoreau
 ```
+
+
+
+
+# test on linux  server 
+
+
+```
+ssh  tom@127.0.0.1 -p 2022 
+```
+
+press ctrl + c   quit 
+
+
+
