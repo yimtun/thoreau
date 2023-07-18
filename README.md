@@ -82,7 +82,7 @@ controller	thoreau
 ```
 
 
-install plugin
+# install plugin
 
 
 ```
@@ -140,7 +140,7 @@ cd /root/go-code/thoreau/pluginBin
 ssh  tom@127.0.0.1 -p 2022 
 ```
 
-press ctrl + c   quit 
+## press ctrl + c   to quit 
 
 
 
