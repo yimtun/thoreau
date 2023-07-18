@@ -50,6 +50,13 @@
 从私有仓库https://github.com/yimtun/sshServer 整理来  核心功能还未完成迁移 不是sshServer的全部功能
 
 
+# buid env
+
+```
+go  version
+go version go1.17.10 linux/amd64
+```
+
 
 # build
 
