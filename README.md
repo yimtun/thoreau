@@ -57,10 +57,17 @@ go  version
 go version go1.17.10 linux/amd64
 ```
 
+# repo path
+
+```
+/root/go-code/
+```
+
 
 # build
 
 ```
+cd /root/go-code/
 git clone https://github.com/yimtun/thoreau
 cd thoreau
 mkdir ./pluginBin
@@ -70,7 +77,7 @@ go build -o pluginBin/    controller/controller.go
 
 
 ```
-ls pluginBin/
+ls /root/go-code/thoreau/pluginBin/
 controller	thoreau
 ```
 
@@ -79,7 +86,7 @@ install plugin
 
 
 ```
-cd thoreau
+cd /root/go-code/thoreau
 git clone https://github.com/yimtun/cf
 cd cf
 go build cf.go
@@ -87,6 +94,6 @@ cp cf ../pluginBin
 ```
 
 ```
-cd thoreau
+cd /root/go-code/thoreau
 rm -rf cf
 ```
