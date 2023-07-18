@@ -54,7 +54,8 @@
 # build
 
 ```
-cd sshserver
+git clone github.com:yimtun/thoreau
+cd thoreau
 mkdir ./pluginBin
 go build -o pluginBin/    thoreau.go
 go build -o pluginBin/    controller/controller.go 
@@ -71,7 +72,7 @@ install plugin
 
 
 ```
-cd sshserver
+cd thoreau
 git clone https://github.com/yimtun/cf.git
 cd cf
 go build cf.go
