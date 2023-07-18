@@ -86,3 +86,7 @@ go build cf.go
 cp cf ../pluginBin
 ```
 
+```
+cd thoreau
+rm -rf cf
+```
