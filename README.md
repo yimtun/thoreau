@@ -88,7 +88,7 @@ install plugin
 ```
 cd /root/go-code/thoreau
 git clone https://github.com/yimtun/cf
-cd root/go-code/thoreau/cf
+cd /root/go-code/thoreau/cf
 go build cf.go
 cp cf ../pluginBin
 ```
